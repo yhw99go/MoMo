@@ -22,6 +22,9 @@
 		0E377815203A9F0A0041298A /* TransactionHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E377814203A9F0A0041298A /* TransactionHistoryTableViewCell.swift */; };
 		0E377817203AA0B70041298A /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E377816203AA0B70041298A /* Transaction.swift */; };
 		0E37781C203AC1A00041298A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E37781A203AC1A00041298A /* Main.storyboard */; };
+		0EAA212B203CBA6700ECCD25 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA212A203CBA6700ECCD25 /* SignInViewController.swift */; };
+		0EAA212D203CBA7900ECCD25 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA212C203CBA7900ECCD25 /* RegisterViewController.swift */; };
+		0EAA212F203CC8EA00ECCD25 /* momoaccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA212E203CC8EA00ECCD25 /* momoaccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		0E377814203A9F0A0041298A /* TransactionHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		0E377816203AA0B70041298A /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		0E37781B203AC1A00041298A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0EAA212A203CBA6700ECCD25 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0EAA212C203CBA7900ECCD25 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		0EAA212E203CC8EA00ECCD25 /* momoaccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = momoaccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,8 @@
 				0E377801203A55800041298A /* LaunchScreen.storyboard */,
 				0E377804203A55800041298A /* Info.plist */,
 				0E3777F8203A55800041298A /* AppDelegate.swift */,
+				0EAA212A203CBA6700ECCD25 /* SignInViewController.swift */,
+				0EAA212C203CBA7900ECCD25 /* RegisterViewController.swift */,
 				0E3777FA203A55800041298A /* ViewController.swift */,
 				0E377810203A75F10041298A /* SendViewController.swift */,
 				0E01D307203ACDC300C48239 /* SucceedViewController.swift */,
@@ -85,6 +93,7 @@
 				0E35BF09203BB04F00741E13 /* AddBankViewController.swift */,
 				0E35BF0D203BC25A00741E13 /* PersonalInfoViewController.swift */,
 				0E37781A203AC1A00041298A /* Main.storyboard */,
+				0EAA212E203CC8EA00ECCD25 /* momoaccount.swift */,
 				0E37780A203A5DDB0041298A /* Account.swift */,
 				0E377816203AA0B70041298A /* Transaction.swift */,
 				0E37780E203A622B0041298A /* CustomTableViewCell.swift */,
@@ -126,6 +135,7 @@
 				TargetAttributes = {
 					0E3777F4203A557F0041298A = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 455PZ5NQ58;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -170,10 +180,13 @@
 				0E3777F9203A55800041298A /* AppDelegate.swift in Sources */,
 				0E01D308203ACDC300C48239 /* SucceedViewController.swift in Sources */,
 				0E377817203AA0B70041298A /* Transaction.swift in Sources */,
+				0EAA212F203CC8EA00ECCD25 /* momoaccount.swift in Sources */,
 				0E377815203A9F0A0041298A /* TransactionHistoryTableViewCell.swift in Sources */,
+				0EAA212B203CBA6700ECCD25 /* SignInViewController.swift in Sources */,
 				0E35BF08203BAE4C00741E13 /* AddTableViewCell.swift in Sources */,
 				0E37780B203A5DDB0041298A /* Account.swift in Sources */,
 				0E35BF0A203BB04F00741E13 /* AddBankViewController.swift in Sources */,
+				0EAA212D203CBA7900ECCD25 /* RegisterViewController.swift in Sources */,
 				0E35BF0E203BC25A00741E13 /* PersonalInfoViewController.swift in Sources */,
 				0E377811203A75F10041298A /* SendViewController.swift in Sources */,
 				0E377813203A9C300041298A /* TransactionHistoryViewController.swift in Sources */,
@@ -298,6 +311,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 455PZ5NQ58;
 				INFOPLIST_FILE = Integrated_Bank_App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.OrganizationName.Integrated-Bank-App";
@@ -310,6 +325,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 455PZ5NQ58;
 				INFOPLIST_FILE = Integrated_Bank_App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.OrganizationName.Integrated-Bank-App";

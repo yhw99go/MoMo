@@ -12,7 +12,7 @@ class SucceedViewController: UIViewController {
     
     @IBOutlet var sentInfo: UILabel!
     @IBAction func succeedbutton (sender: UIButton) {
-        // go back two
+        // go back two (back to my account button)
         var viewControllers = navigationController?.viewControllers
         viewControllers?.removeLast(2) // views to pop
         navigationController?.setViewControllers(viewControllers!, animated: true)
@@ -24,14 +24,6 @@ class SucceedViewController: UIViewController {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // hide button
@@ -40,9 +32,8 @@ class SucceedViewController: UIViewController {
         
         //section recieve transaction Display
         transactionDisplay = self.delegate.transactionData
-
-        sentInfo?.text = "Sent Info \n" + "Sent to: " + transactionDisplay[0].recipientaccount + "\n" + "Amount: " + transactionDisplay[0].sentamount
-
+        
+        sentInfo?.text = "Sent Info \n" + "Sent to: " + transactionDisplay[0].recipientaccount + "\n" + "Amount: " + transactionDisplay[0].sentamount + "$ CAD"
     }
 
     override func didReceiveMemoryWarning() {

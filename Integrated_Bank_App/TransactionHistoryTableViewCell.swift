@@ -15,8 +15,6 @@ class TransactionHistoryTableViewCell: UITableViewCell {
     @IBOutlet var recipientAccount: UILabel!
     @IBOutlet var sentAccount: UILabel!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

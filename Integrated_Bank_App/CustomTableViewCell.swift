@@ -14,8 +14,6 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet var accountNumber : UILabel!
     @IBOutlet var accountBalance : UILabel!
 
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

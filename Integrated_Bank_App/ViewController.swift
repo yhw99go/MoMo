@@ -79,6 +79,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // hide button
+        self.navigationItem.setHidesBackButton(true, animated:true);
+
         mainTableView.tableFooterView = UIView(frame: CGRect.zero)
         mainTableView.reloadData()
         // Do any additional setup after loading the view, typically from a nib.

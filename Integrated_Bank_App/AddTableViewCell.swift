@@ -12,7 +12,6 @@ class AddTableViewCell: UITableViewCell {
     
     @IBOutlet var bankImageView : UIImageView!
     @IBOutlet var bankName : UILabel!
-    
     @IBOutlet var addButton: UIButton!
 
     override func awakeFromNib() {
