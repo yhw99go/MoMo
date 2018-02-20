@@ -40,7 +40,9 @@ class SucceedViewController: UIViewController {
         
         //section recieve transaction Display
         transactionDisplay = self.delegate.transactionData
+
         sentInfo?.text = "Sent Info \n" + "Sent to: " + transactionDisplay[0].recipientaccount + "\n" + "Amount: " + transactionDisplay[0].sentamount
+
     }
 
     override func didReceiveMemoryWarning() {

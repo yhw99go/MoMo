@@ -22,6 +22,7 @@ class SendViewController: UIViewController {
         
         
         // if bank transaction <= 5
+        //change back to if self.delegate.transactionGet.count <= 4{
         if self.delegate.transactionGet.count <= 4{
             self.delegate.bankAccounts[0].balance -= Float(amountText.text!)!
             
@@ -39,20 +40,21 @@ class SendViewController: UIViewController {
             }
             // created transactionData which should be transffered back to History View
             
-            
             self.delegate.transactionGet.append(transactionData[0])
             //transactionNumber += 1 for more functionality
-            
-        } else {
+        }
         
         // if bank transaction >= 5
+        else {
             let refreshAlert = UIAlertController(title: "You have made 5 or more transactions", message: "Do you want to pay 0.2$ to proceed?", preferredStyle: UIAlertControllerStyle.alert)
-            
-            refreshAlert.addAction(UIAlertAction(title: "Proceed", style: .default, handler: { (action: UIAlertAction!) in
+        
+            //proceed to succeed view
+            /*
+            let action = UIAlertAction(title: "OK", style: .default) { (action) -> Void in
                 print("Handle Ok logic here")
+                let nextSuccessViewController = self.storyboard?.instantiateViewController(withIdentifier: "sendtoSucceedSegue")
+                self.present(nextSuccessViewController!, animated: true, completion: nil)
                 self.delegate.bankAccounts[0].balance -= (Float(self.amountText.text!)! + 0.2)
-                
-                
                 // current time to string
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -60,32 +62,41 @@ class SendViewController: UIViewController {
                 let yourDate = formatter.date(from: myString)
                 formatter.dateFormat = "dd-MMM-yyyy HH:mm:ss"
                 let myStringafd = formatter.string(from: yourDate!)
-                
+                // created transactionData which should be transffered back to History View
                 if self.transactionData.count == 0 {
                     //need change for sentaccount default bank account
                     self.transactionData.append(Transaction(sentamount: self.amountText.text!, senttime: myStringafd, sentaccount: "4724 0439 XXXX XXXX", recipientaccount: self.recipientText.text! ))
                 }
-                // created transactionData which should be transffered back to History View
-                
-                
                 self.delegate.transactionGet.append(self.transactionData[0])
-                //transactionNumber += 1 for more functionality
-                let action = UIAlertAction(title: "OK", style: .default) { (action) -> Void in
-                    let viewControllerYouWantToPresent = self.storyboard?.instantiateViewControllerWithIdentifier("SomeViewControllerIdentifier")
-                    
-                    self.presentViewController(viewControllerYouWantToPresent!, animated: true, completion: nil)
+            }
+            refreshAlert.addAction(action) */
+            refreshAlert.addAction(UIAlertAction(title: "Proceed", style: .default, handler: { (action: UIAlertAction!) in
+                print("Handle Ok logic here")
+                self.delegate.bankAccounts[0].balance -= (Float(self.amountText.text!)! + 0.2)
+                // current time to string
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let myString = formatter.string(from: Date())
+                let yourDate = formatter.date(from: myString)
+                formatter.dateFormat = "dd-MMM-yyyy HH:mm:ss"
+                let myStringafd = formatter.string(from: yourDate!)
+                // created transactionData which should be transffered back to History View
+                if self.transactionData.count == 0 {
+                    //need change for sentaccount default bank account
+                    self.transactionData.append(Transaction(sentamount: self.amountText.text!, senttime: myStringafd, sentaccount: "4724 0439 XXXX XXXX", recipientaccount: self.recipientText.text! ))
                 }
-                alert.addAction(action)
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.delegate.transactionGet.append(self.transactionData[0])
+                
+                let viewControllerYouWantToPresent = self.storyboard?.instantiateViewController(withIdentifier: "sendtoSucceedSegue")
+                self.present(viewControllerYouWantToPresent!, animated: true, completion: nil)
             }))
+
             
+            // cancel
             refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
                 print("Cancelled")
                 
             }))
-            
-            present(refreshAlert, animated: true, completion: nil)
-        // add functionality to record for the transaction fee
         //***********************************************************************//
         }
         
