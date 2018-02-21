@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userName: UITextField!
@@ -18,7 +19,29 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signinButton(sender: UIButton) {
         sgininAccount = [MomoAccount(email: (userName?.text)!, password: (password?.text)!, fullname: "", birth: "")]
     }
-
+    
+    @IBAction func UseTouchIDbutton(_ sender: Any) {
+        let context: LAContext = LAContext()
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+        {
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "We need your TouchID", reply:{
+                (wasSuccesful, error) in
+                if wasSuccesful{
+                    DispatchQueue.main.async {
+                        // Update UI
+                           self.performSegue(withIdentifier: "goMyAccounts", sender: sender)
+                    }
+                 
+                    print("Was a success")
+                }
+                else{
+                    print("not logged in")
+                }
+                
+            })
+        }
+    }
+    
     // function for enabling button
     @IBAction func usernamechanged(_ sender: Any) {
         if validateInput(text: userName.text!) {
