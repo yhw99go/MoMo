@@ -8,11 +8,52 @@
 
 import UIKit
 
-class PersonalInfoViewController: UIViewController {
-    @IBOutlet var bankaccountnumber: UITextField!
+class PersonalInfoViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var bankaccountnumber: UITextField!
+    @IBOutlet weak var bankingpassword :UITextField!
     @IBOutlet var bankName : UILabel!
     @IBOutlet var bankimageview : UIImageView!
+    @IBOutlet weak var addbankbutton : UIButton!
     weak var delegate: AddBankViewController!
+    
+    func validateInput(text: String) -> Bool {
+        var result = false
+        if text.characters.count == 0 {
+            result = false
+        }
+        else {
+            result = true
+        }
+        return result
+    }
+    @IBAction func bankaccountchanged(_ sender: Any) {
+        if validateInput(text: bankaccountnumber.text!) {
+            //signinbutton.isEnabled = true
+            if (bankingpassword.text?.characters.count)! > 0 {
+                addbankbutton.isEnabled = true
+            } else {
+                addbankbutton.isEnabled = false
+            }
+        }
+        else {
+            addbankbutton.isEnabled = false
+        }
+
+    }
+    @IBAction func passwordchanged(_ sender: Any) {
+        if validateInput(text: bankingpassword.text!) {
+            //signinbutton.isEnabled = true
+            if (bankaccountnumber.text?.characters.count)! > 0 {
+                addbankbutton.isEnabled = true
+            } else {
+                addbankbutton.isEnabled = false
+            }
+        }
+        else {
+            addbankbutton.isEnabled = false
+        }
+    }
+    
     @IBAction func addInMyAccount (sender: UIButton) {
         //go back to My accounts
         var viewControllers = navigationController?.viewControllers
@@ -30,6 +71,9 @@ class PersonalInfoViewController: UIViewController {
         // add here update the selected bank
         super.viewWillAppear(animated)
     }
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -52,8 +96,18 @@ class PersonalInfoViewController: UIViewController {
             })
         }).resume()
         // Do any additional setup after loading the view.
+        addbankbutton.isEnabled = false
+        self.bankaccountnumber.delegate = self
+        self.bankingpassword.delegate = self
     }
     
+    //text field disappear when touching screen or return
+    override func touchesBegan(_ touches: Set<UITouch>, with even: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return (true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

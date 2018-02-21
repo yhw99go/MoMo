@@ -8,9 +8,10 @@
 
 import UIKit
 
-class SendViewController: UIViewController {
-    @IBOutlet var amountText: UITextField!
-    @IBOutlet var recipientText: UITextField!
+class SendViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var amountText: UITextField!
+    @IBOutlet weak var recipientText: UITextField!
+    @IBOutlet weak var sendbutton: UIButton!
     
     var transactionData: [Transaction] = []
     //var transactionNumber = 0 for more functionality
@@ -18,8 +19,56 @@ class SendViewController: UIViewController {
     // update balance in view controller
     // connect segue with view controller
     weak var delegate: ViewController!
+    
+    @IBAction func sendingchanged(_ sender: Any) {
+        if validatemoney(text: amountText.text!) {
+            //signinbutton.isEnabled = true
+            if (recipientText.text?.characters.count)! > 0 {
+                sendbutton.isEnabled = true
+            } else {
+                sendbutton.isEnabled = false
+            }
+        }
+        else {
+            sendbutton.isEnabled = false
+        }
+    }
+    @IBAction func recipentchanged(_ sender: Any) {
+        if validateInput(text: recipientText.text!) {
+            //signinbutton.isEnabled = true
+            if Float(amountText.text!) != nil {
+                sendbutton.isEnabled = true
+            } else {
+                sendbutton.isEnabled = false
+            }
+        }
+        else {
+            sendbutton.isEnabled = false
+        }
+    }
+    // validate if no blank
+    func validateInput(text: String) -> Bool {
+        var result = false
+        if text.characters.count == 0 {
+            result = false
+        }
+        else {
+            result = true
+        }
+        return result
+    }
+    // validate if float
+    func validatemoney(text: String) -> Bool {
+        var result = false
+        if Float(text) != nil {
+            result = true
+        }else {
+            result = false
+        }
+        return result
+    }
+    
     @IBAction func send (sender: UIButton) {
-        
         // if bank transaction <= 5
         if self.delegate.transactionGet.count <= 4{
             self.delegate.bankAccounts[0].balance -= Float(amountText.text!)!
@@ -53,10 +102,12 @@ class SendViewController: UIViewController {
                 self.delegate.bankAccounts[0].balance -= (Float(self.amountText.text!)! + 0.2)
                 // current time to string
                 let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                // formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                formatter.dateFormat = "yyyy-MM-dd HH:mm"
                 let myString = formatter.string(from: Date())
                 let yourDate = formatter.date(from: myString)
-                formatter.dateFormat = "dd-MMM-yyyy HH:mm:ss"
+                // formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                formatter.dateFormat = "dd-MMM-yyyy HH:mm"
                 let myStringafd = formatter.string(from: yourDate!)
                 // created transactionData which should be transffered back to History View
                 if self.transactionData.count == 0 {
@@ -90,16 +141,20 @@ class SendViewController: UIViewController {
     
     
     
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.amountText.delegate = self
+        self.recipientText.delegate = self
         /*self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back to My Account", style:.plain, target:nil, action:nil)*/
         // Do any additional setup after loading the view.
+        sendbutton.isEnabled = false
+    }
+    //text field disappear when touching screen or return
+    override func touchesBegan(_ touches: Set<UITouch>, with even: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return (true)
     }
 
     override func didReceiveMemoryWarning() {
