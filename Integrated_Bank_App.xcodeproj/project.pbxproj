@@ -25,6 +25,11 @@
 		0EAA212B203CBA6700ECCD25 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA212A203CBA6700ECCD25 /* SignInViewController.swift */; };
 		0EAA212D203CBA7900ECCD25 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA212C203CBA7900ECCD25 /* RegisterViewController.swift */; };
 		0EAA212F203CC8EA00ECCD25 /* momoaccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA212E203CC8EA00ECCD25 /* momoaccount.swift */; };
+		3083A1FC203CF18C00D69823 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083A1FB203CF18C00D69823 /* User.swift */; };
+		3083A200203CF1B900D69823 /* ErrandStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083A1FD203CF1B900D69823 /* ErrandStatus.swift */; };
+		3083A201203CF1B900D69823 /* ErrandsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083A1FF203CF1B900D69823 /* ErrandsCache.swift */; };
+		3083A20C203CF22E00D69823 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 3083A209203CF22E00D69823 /* sqlite3.c */; };
+		BB053688C93C40B4E0BB6B22 /* Pods_Integrated_Bank_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A49ED1AB74805D9AAA4F0FB6 /* Pods_Integrated_Bank_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,16 @@
 		0EAA212A203CBA6700ECCD25 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		0EAA212C203CBA7900ECCD25 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0EAA212E203CC8EA00ECCD25 /* momoaccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = momoaccount.swift; sourceTree = "<group>"; };
+		3083A1FB203CF18C00D69823 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3083A1FD203CF1B900D69823 /* ErrandStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrandStatus.swift; sourceTree = "<group>"; };
+		3083A1FF203CF1B900D69823 /* ErrandsCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrandsCache.swift; sourceTree = "<group>"; };
+		3083A208203CF22D00D69823 /* Integrated_Bank_App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Integrated_Bank_App-Bridging-Header.h"; sourceTree = "<group>"; };
+		3083A209203CF22E00D69823 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		3083A20A203CF22E00D69823 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
+		3083A20B203CF22E00D69823 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		72D26781CB18C83AA64B2953 /* Pods-Integrated_Bank_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Integrated_Bank_App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Integrated_Bank_App/Pods-Integrated_Bank_App.release.xcconfig"; sourceTree = "<group>"; };
+		A49ED1AB74805D9AAA4F0FB6 /* Pods_Integrated_Bank_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Integrated_Bank_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5E8946EA74A1EAE4C836007 /* Pods-Integrated_Bank_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Integrated_Bank_App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Integrated_Bank_App/Pods-Integrated_Bank_App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB053688C93C40B4E0BB6B22 /* Pods_Integrated_Bank_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +82,8 @@
 			children = (
 				0E3777F7203A55800041298A /* Integrated_Bank_App */,
 				0E3777F6203A55800041298A /* Products */,
+				8CF03C4002BB7C74EA4874B0 /* Pods */,
+				5776D65E7349F9A423684EFA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +98,7 @@
 		0E3777F7203A55800041298A /* Integrated_Bank_App */ = {
 			isa = PBXGroup;
 			children = (
+				3083A202203CF1F000D69823 /* Cache */,
 				0E3777FF203A55800041298A /* Assets.xcassets */,
 				0E377801203A55800041298A /* LaunchScreen.storyboard */,
 				0E377804203A55800041298A /* Info.plist */,
@@ -94,6 +113,7 @@
 				0E35BF0D203BC25A00741E13 /* PersonalInfoViewController.swift */,
 				0E37781A203AC1A00041298A /* Main.storyboard */,
 				0EAA212E203CC8EA00ECCD25 /* momoaccount.swift */,
+				3083A1FB203CF18C00D69823 /* User.swift */,
 				0E37780A203A5DDB0041298A /* Account.swift */,
 				0E377816203AA0B70041298A /* Transaction.swift */,
 				0E37780E203A622B0041298A /* CustomTableViewCell.swift */,
@@ -103,6 +123,52 @@
 			path = Integrated_Bank_App;
 			sourceTree = "<group>";
 		};
+		3083A202203CF1F000D69823 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				3083A20D203CF61800D69823 /* Model */,
+				3083A203203CF1FD00D69823 /* SQLite */,
+			);
+			name = Cache;
+			sourceTree = "<group>";
+		};
+		3083A203203CF1FD00D69823 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				3083A209203CF22E00D69823 /* sqlite3.c */,
+				3083A20B203CF22E00D69823 /* sqlite3.h */,
+				3083A20A203CF22E00D69823 /* sqlite3ext.h */,
+				3083A208203CF22D00D69823 /* Integrated_Bank_App-Bridging-Header.h */,
+			);
+			name = SQLite;
+			sourceTree = "<group>";
+		};
+		3083A20D203CF61800D69823 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3083A1FF203CF1B900D69823 /* ErrandsCache.swift */,
+				3083A1FD203CF1B900D69823 /* ErrandStatus.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5776D65E7349F9A423684EFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A49ED1AB74805D9AAA4F0FB6 /* Pods_Integrated_Bank_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CF03C4002BB7C74EA4874B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5E8946EA74A1EAE4C836007 /* Pods-Integrated_Bank_App.debug.xcconfig */,
+				72D26781CB18C83AA64B2953 /* Pods-Integrated_Bank_App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E377807203A55800041298A /* Build configuration list for PBXNativeTarget "Integrated_Bank_App" */;
 			buildPhases = (
+				B9846BF393AACA16F512E9CD /* [CP] Check Pods Manifest.lock */,
 				0E3777F1203A557F0041298A /* Sources */,
 				0E3777F2203A557F0041298A /* Frameworks */,
 				0E3777F3203A557F0041298A /* Resources */,
+				06A00B20B63AEBB8D2BF5606 /* [CP] Embed Pods Frameworks */,
+				C2EF6D7A6E1D2A08791C78AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,7 +204,8 @@
 				TargetAttributes = {
 					0E3777F4203A557F0041298A = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 455PZ5NQ58;
+						DevelopmentTeam = 93VHY3RD73;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -171,6 +241,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06A00B20B63AEBB8D2BF5606 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Integrated_Bank_App/Pods-Integrated_Bank_App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Integrated_Bank_App/Pods-Integrated_Bank_App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9846BF393AACA16F512E9CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Integrated_Bank_App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2EF6D7A6E1D2A08791C78AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Integrated_Bank_App/Pods-Integrated_Bank_App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0E3777F1203A557F0041298A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -180,16 +308,20 @@
 				0E3777F9203A55800041298A /* AppDelegate.swift in Sources */,
 				0E01D308203ACDC300C48239 /* SucceedViewController.swift in Sources */,
 				0E377817203AA0B70041298A /* Transaction.swift in Sources */,
+				3083A1FC203CF18C00D69823 /* User.swift in Sources */,
 				0EAA212F203CC8EA00ECCD25 /* momoaccount.swift in Sources */,
+				3083A20C203CF22E00D69823 /* sqlite3.c in Sources */,
 				0E377815203A9F0A0041298A /* TransactionHistoryTableViewCell.swift in Sources */,
 				0EAA212B203CBA6700ECCD25 /* SignInViewController.swift in Sources */,
 				0E35BF08203BAE4C00741E13 /* AddTableViewCell.swift in Sources */,
 				0E37780B203A5DDB0041298A /* Account.swift in Sources */,
 				0E35BF0A203BB04F00741E13 /* AddBankViewController.swift in Sources */,
 				0EAA212D203CBA7900ECCD25 /* RegisterViewController.swift in Sources */,
+				3083A201203CF1B900D69823 /* ErrandsCache.swift in Sources */,
 				0E35BF0E203BC25A00741E13 /* PersonalInfoViewController.swift in Sources */,
 				0E377811203A75F10041298A /* SendViewController.swift in Sources */,
 				0E377813203A9C300041298A /* TransactionHistoryViewController.swift in Sources */,
+				3083A200203CF1B900D69823 /* ErrandStatus.swift in Sources */,
 				0E37780F203A622B0041298A /* CustomTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,15 +441,19 @@
 		};
 		0E377808203A55800041298A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5E8946EA74A1EAE4C836007 /* Pods-Integrated_Bank_App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 455PZ5NQ58;
+				DEVELOPMENT_TEAM = 93VHY3RD73;
 				INFOPLIST_FILE = Integrated_Bank_App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "momo-integrated-banking-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Integrated_Bank_App/Integrated_Bank_App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -325,15 +461,18 @@
 		};
 		0E377809203A55800041298A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72D26781CB18C83AA64B2953 /* Pods-Integrated_Bank_App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 455PZ5NQ58;
+				DEVELOPMENT_TEAM = 93VHY3RD73;
 				INFOPLIST_FILE = Integrated_Bank_App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "momo-integrated-banking-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Integrated_Bank_App/Integrated_Bank_App-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
